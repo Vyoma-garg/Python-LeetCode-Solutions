@@ -1,0 +1,15 @@
+class Solution:
+    def findNumbers(self, nums: List[int]) -> int:
+        c=0
+        i=0
+        #length=len(nums)
+        #while(i<length):
+           # if((nums[i]>9 and nums[i]<=99) or (nums[i]>999 and nums[i]<=9999) or (nums[i]==100000)):
+            #    c+=1
+           # i+=1
+       # return c
+        for x in nums:
+            y=str(x)
+            if(len(y)%2==0):
+                c+=1
+        return c
