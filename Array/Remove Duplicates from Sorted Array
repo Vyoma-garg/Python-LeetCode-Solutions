@@ -1,0 +1,10 @@
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+      
+        
+        for x in range(1,len(nums)) :
+             while(x <len(nums) and nums[x-1]==nums[x]):
+                    nums.pop(x)
+                    
+        return(len(nums))
+                
