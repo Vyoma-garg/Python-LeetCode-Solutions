@@ -1,0 +1,23 @@
+class Solution(object):
+    def rotate(self, matrix):
+        """
+        :type matrix: List[List[int]]
+        :rtype: None Do not return anything, modify matrix in-place instead.
+        """
+        for i in range(len(matrix)):
+            for j in range(i+1,len(matrix)):
+                matrix[i][j],matrix[j][i]=matrix[j][i], matrix[i][j]
+
+#reverse row
+        for i in range(len(matrix)):  #row
+          for j in range(len(matrix)//2):  #column aadhe
+            rev=len(matrix)-1-j   #3-1-0=2  #column reverse index
+
+            #swapping of the columns
+
+            #matrix[i][j],matrix[i][rev]=matrix[i][rev],matrix[i][j]  
+            temp=matrix[i][j]
+            matrix[i][j]=matrix[i][rev]
+            matrix[i][rev]=temp
+            
+        return matrix 
