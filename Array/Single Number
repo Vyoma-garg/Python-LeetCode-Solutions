@@ -1,0 +1,20 @@
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        #dic={}
+        #for i in nums:
+         #   if i in dic:
+          #      dic[i]+=1
+           # else:
+           #     dic[i]=1
+        #print(dic)
+       
+        #for key,val in dic.items():
+         #   if val==1:
+          #      return key
+        
+           #BEST SOLUTION USING XOR: time=n , space 1
+            a=0
+            for i in nums:
+                a^=i
+            return a
+              
