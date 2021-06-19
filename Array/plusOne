@@ -18,3 +18,19 @@ class Solution:
         
         
         return digits
+
+#Directly converting int<->List of integers 
+digit=[1,3,5,7]
+sum=0
+for i in range(len(digit)):
+  sum=sum + digit[i]*(10**(len(digit)-i-1))
+
+print(sum) 
+
+sum=sum+1
+l=[]
+while(sum!=0):
+  l=[sum%10]+l
+  sum=sum//10
+
+print(l)
