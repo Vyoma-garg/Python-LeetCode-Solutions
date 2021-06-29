@@ -1,0 +1,25 @@
+class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+            result =""
+            
+            mini=len(strs[0])
+            
+    #get the minimum length string
+    
+            for i in range(1,len(strs)):
+                if len(strs[i]) < mini:
+                    mini = len(strs[i])
+                
+            for i in range(mini):
+
+    # Current character (must be same in all strings to be a part of result)
+                current = strs[0][i]
+
+                for j in range(1,len(strs)):
+                    if (strs[j][i] != current):
+                        return result
+
+                # Append to result
+                result = result+current
+
+            return (result)
