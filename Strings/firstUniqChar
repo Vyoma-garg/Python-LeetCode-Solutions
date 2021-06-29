@@ -1,0 +1,40 @@
+class Solution:
+    def firstUniqChar(self, s: str) -> int:
+            
+#FASTEST USING COUNTER 
+            c = collections.Counter(s)
+            print(c)
+            for i in c:
+                if c[i] == 1:
+                    return s.index(i)
+            return -1
+#Using dict           
+        #count = {}
+        
+        #for c, v in enumerate(s):
+         #   if v in count:
+          #      count[v] += 1
+           # else:
+            #    count[v] = 1
+                
+        #for c, v, in enumerate(s):
+         #   if count[v] == 1:
+          #      return c
+        #return -1
+        
+#Slowest with sets 
+            #seen = set()  
+    
+            #for i in range(len(s)):
+              #if s[i] not in seen:
+                # go through the rest to check if another copy is there
+                #found = False
+                #for j in range(i+1, len(s)):
+                    #if s[j] == s[i]:
+                        #seen.add(s[i])
+                        #found = True
+
+                #if not found:
+                   # return i
+              
+           # return -1
