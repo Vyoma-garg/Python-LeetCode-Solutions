@@ -48,4 +48,39 @@ class Solution:
         ptr1.next=ptr1.next.next
         
         return head
+        
+ #BETTER SOLUTION1 ---------------------------------------------------
+         #len=1
+        #current= p=head
+        #while current.next:
+        #    len+=1
+        #    current=current.next
+        #    if len>n+1:
+        #        p=p.next
+        
+       # if len==n:
+        #    return head.next
+        #else:
+         #   p.next=p.next.next
+         #   return head
+        
+#BETTER SOLUTION 2-----------------------------------------------------       
+        fast = head
+        for i in range(n):
+            if not fast:
+                return head
+            fast = fast.next
+        
+        if not fast: 
+            return head.next
+        
+        previous = head
+        fast = fast.next
+        
+        while fast:
+            previous = previous.next
+            fast = fast.next
+            
+        previous.next = previous.next.next
+        return head
  
