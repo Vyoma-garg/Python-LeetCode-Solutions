@@ -1,0 +1,17 @@
+class Solution:
+    def coinChange(self, coins: List[int], amount: int) -> int:
+        #Unbounded Kanpsack
+        #Bottom Up DP
+        #DFS bactracking= brute force: done using bottom up dp
+        #O(amount x number of coins) time, O(amount) space
+        
+        dp=[amount+1]*(amount+1)  #initialize by any value greater than amount , can be infinite number of                                      ways of having a coin for summing up to amount== Unbounded Knapsack
+        
+        dp[0]=0   #base case for coin 0, having 0 number of coins 
+
+        for a in range(1,amount+1):
+            for c in coins:
+                if a-c >=0:
+                    dp[a]=min(dp[a],1+dp[a-c])
+                    
+        return dp[amount] if dp[amount]!=amount+1 else -1
