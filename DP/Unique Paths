@@ -1,0 +1,28 @@
+class Solution:
+    def uniquePaths(self, m: int, n: int) -> int:
+        #filling upwards--------------------
+        #O(nxm)time ,O(n)space----------------------
+            #row=[1]*n   #last row3 elements=1 for m=3
+            
+            #for i in range(m-1):   #row1,row2
+            #    newrow=[1]*n       #initializing to 1 , so that the last column elements will also be=1
+            #    for j in range(n-2,-1,-1):          #starting with second last column 
+            #        newrow[j]=newrow[j+1]+row[j]    #adding Right+Down
+            #    row=newrow  
+
+            #return row[0]
+            
+            
+            #----------filling downwards------------------
+            rows, cols = m, n
+            d = [[1]*cols]*rows
+            
+            for i in range(1,rows):
+                for j in range(1,cols):
+                #if i==0 or j==0:
+                #  d[i][j]=1
+                #else:
+                    d[i][j]=d[i-1][j]+d[i][j-1]  #adding top+left
+
+            return d[rows-1][cols-1]
+        
