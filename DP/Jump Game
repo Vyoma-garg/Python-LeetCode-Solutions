@@ -1,0 +1,15 @@
+class Solution:
+    def canJump(self, nums: List[int]) -> bool:
+        #Brute force--> O(n^n)
+        #DP--> O(n^2)
+        #GREEDY --> O(n) time , O(1)space
+        #coming background from the last element to 0th, if if are able to, then true
+        
+        goal=len(nums)-1
+        for i in range(len(nums)-1,-1,-1):
+            if i+nums[i]>=goal:
+                goal=i
+        if goal==0: 
+            return True
+        else: 
+            return False
