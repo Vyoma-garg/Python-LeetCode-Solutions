@@ -11,8 +11,21 @@ class Solution:
                     #if nums[i]+nums[j]==target:
                         #return i,j
                     
-        d={}           
-        for ind,num in enumerate(nums):
-            if num in d:
-                return [d[num],ind]
-            d[target-num] = ind   
+        #d={}           
+        #for ind,num in enumerate(nums):
+            #if num in d:
+                #return [d[num],ind]
+            #d[target-num] = ind 
+
+        diff={}
+        for i in range(len(nums)):
+                diff[nums[i]]=i
+        
+        for i in range(len(nums)):
+            comp= target-nums[i]
+            if comp in diff and diff[comp]!=i:
+                result= [i, diff[comp]]
+                
+        return result
+
+
