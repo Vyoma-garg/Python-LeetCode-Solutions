@@ -11,6 +11,7 @@ class Solution:
                 #count[ord(ch) - ord('a')] += 1
 
             #key = tuple(count)  #time: O(N * K), used in very long strings
+            #Lists cannot be dictionary keys, tuples are hashable
             
             if key not in result:
                 result[key]=[]
